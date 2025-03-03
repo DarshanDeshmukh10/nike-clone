@@ -1,8 +1,9 @@
 import HeroBanner from "@/components/HeroBanner";
+import ProductCard from "@/components/ProductCard";
 import Wrapper from "@/components/Wrapper";
-HeroBanner
+
 export default function Home() {
-    return <main className="h-[2000px]">
+    return <main >
     <HeroBanner/>
     <Wrapper>
     <div className="text-center max-w-[1200px] max-auto-my-[50px] md:my-[80px]">
@@ -10,8 +11,20 @@ export default function Home() {
         <div className="text-md md:text-xl">
         Nike Air cushioning reduces the weight of the shoe without reducing performance. The lighter the shoe is, the less energy athletes put out during their performance. 
         </div>
-        </div>
-         
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-14 px-5 md:px-0">
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        
+    </div>
     </Wrapper>
     </main>;
 }
