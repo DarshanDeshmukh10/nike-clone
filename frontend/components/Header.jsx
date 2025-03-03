@@ -20,9 +20,9 @@ const Header = () => {
     const [categories,setcategories]=useState(null);
    //for header animation on scroll
    const controlNavbar=()=>{
-      if(window.scrollY>200)
+      if(window.scrollY > 200)
       {
-        if(window.scrollY> lastScrollY && !mobileMenu){
+        if(window.scrollY > lastScrollY && !mobileMenu){
           setShow("-translate-y-[80px]")
          }
          else{
