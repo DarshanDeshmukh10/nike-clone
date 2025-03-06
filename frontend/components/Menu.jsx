@@ -33,12 +33,12 @@ const Menu = ({ showCatMenu, setShowCatMenu, categories }) => {
 
                                 {showCatMenu && (
                                     <ul className="bg-white absolute top-6 left-0 min-w-[250px] px-1 py-1 text-black shadow-lg">
-                                    {subMenuData.map((submenu)=>{
+                                    {categories?.map(({id,name,slug,products})=>{
                                         return(
-                                            <Link key={submenu.id} href='/' onClick={()=>setShowCatMenu(false)}>
+                                            <Link key={id} href={`/category/${slug}`} onClick={()=>setShowCatMenu(false)}>
                                             <li className="h-12 flex justify-between items-center px-3 hover:bg-black/[0.03] rounded-md">
-                                                {submenu.name}
-                                                <span className="opacity-50 text-sm">78</span>
+                                                {name}
+                                                <span className="opacity-50 text-sm">{`(${products.length})`}</span>
                                             </li>
                                             </Link>
                                         )

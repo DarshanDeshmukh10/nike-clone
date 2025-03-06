@@ -9,7 +9,7 @@ import {IoMdHeartEmpty} from "react-icons/io";
 import {BsCart} from "react-icons/bs";
 import {BiMenuAltRight} from "react-icons/bi";
 import {VscChromeClose} from "react-icons/vsc";
-//import { fetchDataFromApi } from '@/utils/api';
+import { fetchDataFromApi } from '@/utils/api';
 const Header = () => {
    
     const[mobileMenu,setMobileMenu]=useState(false);
@@ -42,12 +42,12 @@ const Header = () => {
    },[lastScrollY]) 
    
    useEffect(()=>{
-//    fetchCategories();
+    fetchCategories();
    },[])
-//    const fetchCategories=async()=>{
-//       const {data}=await fetchDataFromApi('/api/categories?populate=*')
-//       setcategories(data)
-//    }
+    const fetchCategories= async ()=>{
+       const {data}=await fetchDataFromApi('/api/categories?populate=*');
+       setcategories(data);
+    }
   return (
     <div className={`w-full h-[50px] md:h-[80px] bg-white flex items-center justify-between z-20 sticky top-0 transition-transform duration-300 ${show}`}>
         <Wrapper className='h-[60px] flex justify-between items-center'>
@@ -57,7 +57,7 @@ const Header = () => {
           
           <Menu showCatMenu={showCatMenu} setShowCatMenu={setShowCatMenu} setMobileMenu={setMobileMenu} categories={categories}/>
 
-          {mobileMenu&&<MenuMobile showCatMenu={showCatMenu} setShowCatMenu={setShowCatMenu} setMobileMenu={setMobileMenu} />}
+          {mobileMenu&&<MenuMobile showCatMenu={showCatMenu} setShowCatMenu={setShowCatMenu} setMobileMenu={setMobileMenu} categories={categories}/>}
         
           <div className='flex items-center gap-2 text-black'>
           
