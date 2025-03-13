@@ -4,7 +4,7 @@ import React from 'react'
 import { getDiscountedPricePercentage } from '@/utils/helper'
 const ProductCard = ({id,data}) => {
   return (
-    <Link href={`/products/${data?.slug}`} className='transform overflow-hidden bg-white duration-300 hover:scale-105 cursor-pointer'>
+    <Link href={`/product/${data?.slug}`} className='transform overflow-hidden bg-white duration-300 hover:scale-105 cursor-pointer'>
         <Image width={500} height={500} src={data?.thumbnail?.url} alt={data?.name}/>
         <div className='p-4 text-black/[0.9]'>
             <h2 className='text-lg font-medium'>{data?.name}</h2>
